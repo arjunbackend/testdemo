@@ -31,6 +31,10 @@ var middlefun = (req,res,next)=>{
     }
 }
 
+app.get('/',(req,res)=>{
+    res.send('Welcome to Test Demo App. Created by Arjun!')
+})
+
 app.post('/signup',(req,res)=>{
     if(!req.body.username || !req.body.password1 || !req.body.password2 || !req.body.email ){
         res.json({
