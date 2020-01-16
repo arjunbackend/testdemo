@@ -1,7 +1,7 @@
 var express = require('express')
 var bodyparser = require('body-parser')
 var jwt = require('jsonwebtoken')
-var user = require('../Models/users'),
+var user = require('../Models/users')
 const config = require('../Config/config')
 
 
