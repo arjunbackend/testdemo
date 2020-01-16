@@ -2,6 +2,7 @@ var express = require('express')
 var bodyparser = require('body-parser')
 var jwt = require('jsonwebtoken')
 var user = require('../Models/users')
+const helper = require('../helper/functions')
 const config = require('../Config/config')
 
 
@@ -39,6 +40,10 @@ app.post('/signup',(req,res)=>{
     if(!req.body.username || !req.body.password1 || !req.body.password2 || !req.body.email ){
         res.json({
             message : 'Please enter user name, email id, password1 and password2' 
+        })
+    }else if(!helper.validateEmail(req.body.email)){
+        res.json({
+            message : 'Please enter valid email' 
         })
     }
     else{
